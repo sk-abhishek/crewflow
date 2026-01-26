@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navItems = [
   { name: "Dashboard", href: "/dashboard" },
@@ -10,6 +11,8 @@ const navItems = [
 ];
 
 export default function Sidebar() {
+  const pathname = usePathname();
+
   return (
     <aside className="h-screen w-64 bg-zinc-900 text-white flex flex-col">
       {/* Logo */}
@@ -19,15 +22,23 @@ export default function Sidebar() {
 
       {/* Navigation */}
       <nav className="flex-1 px-4 space-y-2">
-        {navItems.map((item) => (
-          <Link
-            key={item.name}
-            href={item.href}
-            className="block rounded-lg px-4 py-3 text-sm font-medium text-zinc-300 hover:bg-zinc-800 hover:text-white transition"
-          >
-            {item.name}
-          </Link>
-        ))}
+        {navItems.map((item) => {
+          const isActive = pathname === item.href;
+
+          return (
+            <Link
+              key={item.name}
+              href={item.href}
+              className={`block rounded-lg px-4 py-3 text-sm font-medium transition ${
+                isActive
+                  ? "bg-purple-600 text-white"
+                  : "text-zinc-300 hover:bg-zinc-800 hover:text-white"
+              }`}
+            >
+              {item.name}
+            </Link>
+          );
+        })}
       </nav>
 
       {/* Footer */}
