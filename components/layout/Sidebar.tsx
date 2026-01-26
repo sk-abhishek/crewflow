@@ -2,12 +2,18 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {
+  LayoutDashboard,
+  Calendar,
+  FolderKanban,
+  HeartPulse,
+} from "lucide-react";
 
 const navItems = [
-  { name: "Dashboard", href: "/dashboard" },
-  { name: "Rehearsals", href: "/rehearsals" },
-  { name: "Projects", href: "/projects" },
-  { name: "Health", href: "/health" },
+  { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
+  { name: "Rehearsals", href: "/rehearsals", icon: Calendar },
+  { name: "Projects", href: "/projects", icon: FolderKanban },
+  { name: "Health", href: "/health", icon: HeartPulse },
 ];
 
 export default function Sidebar() {
@@ -24,18 +30,20 @@ export default function Sidebar() {
       <nav className="flex-1 px-4 space-y-2">
         {navItems.map((item) => {
           const isActive = pathname === item.href;
+          const Icon = item.icon;
 
           return (
             <Link
               key={item.name}
               href={item.href}
-              className={`block rounded-lg px-4 py-3 text-sm font-medium transition ${
+              className={`flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium transition ${
                 isActive
                   ? "bg-purple-600 text-white"
                   : "text-zinc-300 hover:bg-zinc-800 hover:text-white"
               }`}
             >
-              {item.name}
+              <Icon size={18} />
+              <span>{item.name}</span>
             </Link>
           );
         })}
