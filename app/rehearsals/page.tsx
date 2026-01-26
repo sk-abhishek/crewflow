@@ -1,0 +1,9 @@
+export default function RehearsalsPage() {
+    return (
+      <div className="p-6">
+        <h2 className="text-2xl font-semibold text-white">
+          Rehearsals
+        </h2>
+      </div>
+    );
+  }
