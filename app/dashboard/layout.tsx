@@ -1,13 +1,11 @@
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en">
-      <body className="bg-zinc-950 text-white antialiased">
+export default function DashboardLayout({
+    children,
+  }: {
+    children: React.ReactNode;
+  }) {
+    return (
+      <main className="flex-1 p-6 overflow-y-auto bg-zinc-950">
         {children}
-      </body>
-    </html>
-  );
-}
+      </main>
+    );
+  }
