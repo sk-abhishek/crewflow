@@ -14,7 +14,7 @@ export default function DashboardCard({
   children,
 }: DashboardCardProps) {
   return (
-    <div className="rounded-xl bg-zinc-900 p-5 border border-zinc-800">
+    <div className="rounded-xl bg-zinc-900 p-5 border border-zinc-800 hover:bg-zinc-800 transition-colors">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2 text-zinc-400">
           {icon}

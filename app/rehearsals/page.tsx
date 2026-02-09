@@ -35,7 +35,7 @@ export default function RehearsalsPage() {
         {rehearsals.map((rehearsal) => (
           <div
             key={rehearsal.id}
-            className="flex items-center justify-between rounded-xl bg-zinc-900 p-5 border border-zinc-800"
+            className="flex items-center justify-between rounded-xl bg-zinc-900 p-5 border border-zinc-800 hover:bg-zinc-800 transition-colors"
           >
             {/* Left info */}
             <div className="space-y-1">

@@ -35,7 +35,7 @@ export default function ProjectsPage() {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="rounded-xl bg-zinc-900 p-5 border border-zinc-800 flex items-center justify-between"
+            className="rounded-xl bg-zinc-900 p-5 border border-zinc-800 flex items-center justify-between hover:bg-zinc-800 transition-colors"
           >
             {/* Left info */}
             <div className="space-y-1">
